@@ -8,7 +8,7 @@ const GallerySlider = () => {
 
     const data = [
         {
-            image: "/images/gallery-1.jpg",
+            image: "images/gallery-1.jpg",
             orientation: "tall",
             heading: "Seoul Hacker House",
             text: "Let's build! Local devs came to the Solana Foundation's Seoul Hacker House ahead of Korea Blockchain Week 2022."
@@ -21,19 +21,19 @@ const GallerySlider = () => {
             text: "Total Solana Breakpoint attendees"
         },
         {
-            image: "/images/gallery-2.jpg",
+            image: "images/gallery-2.jpg",
             orientation: "small",
             heading: "London Hacker House",
             text: "Builders joined London Hacker House, a five-day offline event in June 2022, with advice and support from core Solana Lab engineers."
         },
         {
-            image: "/images/gallery-3.jpg",
+            image: "images/gallery-3.jpg",
             orientation: "large",
             heading: "Seoul Hacker House",
             text: "Let's build! Local devs came to the Solana Foundation's Seoul Hacker House ahead of Korea Blockchain Week 2022."
         },
         {
-            image: "/images/gallery-4.jpg",
+            image: "images/gallery-4.jpg",
             orientation: "small",
             heading: "New Delhi Hacker House",
             text: "Vibe. Mint. Build. Thousands of developers came to build together at the Sept. 2022 New Delhi Solana Hacker House."
@@ -46,7 +46,7 @@ const GallerySlider = () => {
             text: "Monthly active programs"
         },
         {
-            image: "/images/gallery-5.jpg",
+            image: "images/gallery-5.jpg",
             orientation: "tall",
             heading: "Solana Miami",
             text: "New and native users came to Solana Miami in April 2022 to build, learn, and see real world Solana use cases."
@@ -59,19 +59,19 @@ const GallerySlider = () => {
             text: "Solana Hacker House participants"
         },
         {
-            image: "/images/gallery-6.jpg",
+            image: "images/gallery-6.jpg",
             orientation: "small",
             heading: "Solana Mobile Announcement",
             text: "Users, developers, and reporters were on the scene when Solana Labs announced the Solana Mobile Stack and Saga device in June 2022."
         },
         {
-            image: "/images/gallery-7.jpg",
+            image: "images/gallery-7.jpg",
             orientation: "large",
             heading: "Solana Breakpoint 2022",
             text: "3,800 builders. 3 days. 1 community. Teams from around the world gathered in Lisbon in Nov. 2022 to learn, build, and celebrate at the annual conference from the Solana Foundation."
         },
         {
-            image: "/images/gallery-8.jpg",
+            image: "images/gallery-8.jpg",
             orientation: "small",
             heading: "New York Hacker House",
             text: "Start spreading the news. Lines were out the door at the Solana Foundation's New York Hacker House in March 2022."
