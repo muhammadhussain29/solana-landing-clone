@@ -2,9 +2,12 @@
 
 A responsive and animated clone of the [official Solana website](https://solana.com/) landing page built using **React**, **Tailwind CSS**, **GSAP**, and **React Icons**. This project demonstrates clean UI development, animation handling, and component-based architecture.
 
+
 ## 🧑‍💻 Live Preview
 
 > [Check Live Demo](https://muhammadhussain29.github.io/solana-landing-clone/) <!-- Replace with your deployment link (e.g., Vercel/Netlify/Render) -->
+
+---
 
 ## 🚀 Features
 
