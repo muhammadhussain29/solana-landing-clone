@@ -7,9 +7,8 @@ import { RiStackFill } from "react-icons/ri";
 import { LuPackageSearch } from "react-icons/lu";
 import { BsCopy } from "react-icons/bs";
 import { FaVectorSquare } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
 import Search from './Search';
+import gsap from 'gsap';
 
 const navItems = [
   {
@@ -130,11 +129,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const [isActiveMenu, setIsActiveMenu] = useState(false)
-  const toggleMenu = () => {
-    setIsActiveMenu(!isActiveMenu)
-  }
-
   const [expandedSections, setExpandedSections] = useState({
     developers: true,
     tutorials: true,
@@ -156,6 +150,26 @@ const Navbar = () => {
     setIsSearch(true)
     setActiveDropdown(null)
   }
+
+  const firstLine = useRef();
+  const secondLine = useRef();
+  const thirdLine = useRef();
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
+  const toggleMenu = () => {
+    setIsActiveMenu((prev) => !prev);
+
+    const tl = gsap.timeline({ defaults: { duration: 0.2 } });
+
+    if (!isActiveMenu) {
+      tl.to(secondLine.current, { opacity: 0 }, 0)
+        .to(firstLine.current, { rotate: 45, y: 6 }, 0)
+        .to(thirdLine.current, { rotate: -45, y: -6 }, 0);
+    } else {
+      tl.to(secondLine.current, { opacity: 1 }, 0)
+        .to(firstLine.current, { rotate: 0, y: 0 }, 0)
+        .to(thirdLine.current, { rotate: 0, y: 0 }, 0);
+    }
+  };
 
   return (
     <nav className="relative w-full flex flex-wrap justify-between items-center xl:px-44 sm:px-4 px-1 py-4 bg-[rgb(18,18,18)] text-[rgb(132,136,149)] capitalize z-30 diatype">
@@ -191,7 +205,7 @@ const Navbar = () => {
             {/* Dropdown */}
             {activeDropdown === item.title && (
 
-              <div className={`lg:flex hidden absolute top-full ${activeDropdown === "community" ? "right-0" : `${activeDropdown === "network" ? "-right-48" : "left-1/2 -translate-x-1/2"}`}  cursor-default mt-3 w-max max-w-screen-md border overflow-hidden border-gray-800 text-[rgb(132,136,149)] rounded-lg shadow-xl z-50`}>
+              <div className={`lg:flex flex-col hidden absolute top-full ${activeDropdown === "community" ? "right-0" : `${activeDropdown === "network" ? "-right-48" : "left-1/2 -translate-x-1/2"}`}  cursor-default mt-3 w-max max-w-screen-md border overflow-hidden border-gray-800 text-[rgb(132,136,149)] rounded-lg shadow-xl z-50`}>
 
                 <div className="flex gap-6 bg-black/85 backdrop-blur-md">
                   {/* First column */}
@@ -242,15 +256,13 @@ const Navbar = () => {
           </li>
         ))}
 
-        {/* Small Screen */}
-        <li onClick={toggleMenu} className="lg:hidden block text-white">
-          {
-            isActiveMenu ?
-              <IoMdClose className="text-2xl" />
-              :
-              <GiHamburgerMenu className="text-2xl" />
-          }
+        {/* Small Screen Button */}
+        <li onClick={toggleMenu} className="lg:hidden block cursor-pointer">
+          <div ref={firstLine} className="w-5 h-[2px] my-1 bg-white rounded-xl" />
+          <div ref={secondLine} className="w-5 h-[2px] my-1 bg-white rounded-xl" />
+          <div ref={thirdLine} className="w-5 h-[2px] my-1 bg-white rounded-xl" />
         </li>
+
         {/* Search */}
         <li onClick={toggleSearch} className="flex text-base items-center gap-0.5 rounded-lg border border-gray-700/50 px-2 py-1 cursor-pointer text-gray-400">
           <CiSearch className="text-xl" /> Search
@@ -258,7 +270,7 @@ const Navbar = () => {
       </ul>
 
       {/* nav links mobile */}
-      <div className={`${isActiveMenu ? "block" : "hidden"} lg:hidden absolute max-h-full min-h-screen top-16 inset-0 bg-black text-white z-40 pt-10 px-4 overflow-y-auto`}>
+      <div className={`${isActiveMenu ? "block" : "hidden"} lg:hidden absolute max-h-full min-h-screen top-16 inset-0 bg-black text-white z-40 pt-10 px-4 overflow-y-auto overflow-x-hidden`}>
 
         {/* Subtler dark gradient */}
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#1a001e]/60 via-[#0d0019]/50 to-[#000]/40" />

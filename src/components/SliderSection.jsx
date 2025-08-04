@@ -192,9 +192,9 @@ const SliderSection = () => {
 
     return (
         <>
-            <div className='flex mt-16 items-center lg:px-44 px-4'>
+            <div className='flex mt-16 items-center lg:px-44 px-0'>
                 {/* Left Arrow */}
-                <button onClick={slidePrev} className="md:static absolute left-2 cursor-pointer z-10 p-2 rounded-full text-[rgb(132,136,149)] hover:text-white">
+                <button onClick={slidePrev} className="md:static absolute md:left-2 left-0 cursor-pointer z-10 md:p-2 p-1 rounded-full text-[rgb(132,136,149)] hover:text-white">
                     <IoIosArrowBack className="text-3xl" />
                 </button>
                 <div
@@ -210,7 +210,7 @@ const SliderSection = () => {
                     </div>
                 </div>
                 {/* Right Arrow */}
-                <button onClick={slideNext} className="md:static absolute right-2 cursor-pointer z-10 p-2 rounded-full text-[rgb(132,136,149)] hover:text-white">
+                <button onClick={slideNext} className="md:static absolute md:right-2 right-0 cursor-pointer z-10 md:p-2 p-1 rounded-full text-[rgb(132,136,149)] hover:text-white">
                     <IoIosArrowForward className="text-3xl" />
                 </button>
             </div>
